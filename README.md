@@ -24,7 +24,7 @@ mude os nomes de usuário para o seu usuário do DockerHub
 env:
   DOCKER_IMAGE: ezambomsantana/partida-ci
   CONTAINER_NAME: partida
-  DOCKER_USER: ezambomsantana`
+  DOCKER_USER: ezambomsantana
 ```
 
 
