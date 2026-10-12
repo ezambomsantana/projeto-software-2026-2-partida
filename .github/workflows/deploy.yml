@@ -62,7 +62,7 @@ jobs:
             docker run -d \
               -p 8080:8080 \
               -e USER_URL=http://users:5000 \
-              -e DB_HOST=postgres-aula
+              -e DB_HOST=postgres-aula \
               --network=rede \
               --name ${{ env.CONTAINER_NAME }} \
               ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
