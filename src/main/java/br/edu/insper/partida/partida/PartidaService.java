@@ -26,15 +26,15 @@ public class PartidaService {
     private RedisTimeCacheService redisTimeCacheService;
 
     public List<Partida> listarTodas() {
-        //return partidaRepository
-        //        .findAll();
+        return partidaRepository
+                .findAll();
 
 
-         return partidaRepository
-                .findAll()
-                .stream()
-                .map(p -> defineTime(p))
-                .toList();
+         //return partidaRepository
+         //      .findAll()
+         //       .stream()
+         //       .map(p -> defineTime(p))
+         //       .toList();
     }
 
     private Partida defineTime(Partida p) {
@@ -71,12 +71,12 @@ public class PartidaService {
 
     private TimeResponseDTO obterTime(String idTime) {
         // Usando cache em memória (HashMap)
-        if (redisTimeCacheService.contemNoCache(idTime)) {
-            return timeCacheService.obterDoCache(idTime);
-        }
+        //if (timeCacheService.contemNoCache(idTime)) {
+        //    return timeCacheService.obterDoCache(idTime);
+        //}
 
         TimeResponseDTO timeData = timeService.getTime(idTime);
-        redisTimeCacheService.armazenarNoCache(idTime, timeData);
+        //timeCacheService.armazenarNoCache(idTime, timeData);
         return timeData;
     }
 }
