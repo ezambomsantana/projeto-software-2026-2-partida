@@ -13,6 +13,18 @@ docker network create -d bridge rede
 docker run -d --name postgres-aula -e POSTGRES_DB=auladb -e POSTGRES_USER=usuario -e POSTGRES_PASSWORD=senha --network=rede -p 5432:5432 postgres
 ```
 
+## 2.1 Subir Redis (opcional)
+Para usar cache com Redis em vez de HashMap, execute:
+```
+docker run -d --name redis-aula --network=rede -p 6379:6379 redis:latest
+```
+
+Variáveis de ambiente para configurar Redis:
+```
+REDIS_HOST=localhost  # ou o IP do container Redis
+REDIS_PORT=6379       # porta padrão do Redis
+```
+
 
 
 ### 3. Mude os parâmetros do GitHub Action
